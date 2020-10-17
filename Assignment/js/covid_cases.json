@@ -23,10 +23,10 @@
         "size": {
           "field": "Total",
           "type": "quantitative",
-          "scale": {"domain": [0, 8000000]}
+          "scale": {"domain": [0, 3000000]}
         },
         "color": {
-          "field": "depth",
+          "field": "Total",
           "type": "quantitative",
           "scale": {"scheme": "reds"}
         }
