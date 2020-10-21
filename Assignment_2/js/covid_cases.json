@@ -3,6 +3,7 @@
   "title": "COVID-19 Total Cases as of 24th September 2020",
   "width": 800,
   "height": 600,
+
   "data": {
     "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -17,16 +18,15 @@
         "key": "Country",
         "fields": ["Total"]
       }
-    },
-    {"calculate": "datum.Total + 0.1", "as": "Total Cases"}
+    }
   ],
   "projection": {"type": "equirectangular"},
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Total Cases",
+      "field": "Total",
       "type": "quantitative",
-      "scale": {"type": "log"}
+      "scale": {"type": "threshold", "domain": [10000, 300000, 600000], "range":   ["#a8ddb5", "#7bccc4", "#43a2ca", "#0868ac"]}
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
