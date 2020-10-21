@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Total COVID-19 Cases as of 24th September 2020",
+  "title": "COVID-19 Cases as of 24th September 2020",
   "width": 800,
   "height": 600,
   "data": {
