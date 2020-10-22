@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_covid_19_deaths_US%20_cleaned.csv"
+  },
+  "transform": [{"calculate": "datum.Deaths/datum.Population * 10000", "as": "Per 10,000 population"}],
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": "circle", 
+  "encoding": {
+    "longitude": {
+      "field": "longitude",
+      "type": "quantitative"
+    },
+    "latitude": {
+      "field": "latitude",
+      "type": "quantitative"
+    },
+
+    "color": {"field": "Per 10,000 population", "type": "quantitative", "scale": {"scheme": "reds"}}
+  }
+   
+}
