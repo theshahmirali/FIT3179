@@ -1,0 +1,25 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_confirmed_US_cleaned.csv"
+  },
+  "transform": [{"calculate": "datum.Total", "as": "Total Cases"}],
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": "circle", 
+  "encoding": {
+    "longitude": {
+      "field": "longitude",
+      "type": "quantitative"
+    },
+    "latitude": {
+      "field": "latitude",
+      "type": "quantitative"
+    },
+    "size": {"field": "Total Cases", "type": "quantitative", "scale": {"scheme": "blues"} }
+  }
+   
+}
