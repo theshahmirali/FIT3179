@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "COVID-19 Deaths in USA as of 24th September 2020",
   "width": 500,
   "height": 300,
   "data": {
