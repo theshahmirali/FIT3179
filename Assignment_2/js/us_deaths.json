@@ -3,7 +3,7 @@
   "width": 500,
   "height": 300,
   "data": {
-    "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_covid_19_deaths_US%20_cleaned.csv"
+    "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_deaths_US%20_cleaned.csv"
   },
   "transform": [{"calculate": "datum.Deaths/datum.Population * 10000", "as": "Per 10,000 population"}],
   "projection": {
@@ -19,8 +19,20 @@
       "field": "latitude",
       "type": "quantitative"
     },
+    "color": {
+      "field": "Per 10,000 population",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [5, 15, 25],
+        "range": ["#fee5d9", "#fcae91", "#fb6a4a", "#cb181d", "#08519c"]
+      }},
 
-    "color": {"field": "Per 10,000 population", "type": "quantitative", "scale": {"scheme": "reds"}}
+    "tooltip":[
+      {"field": "County", "type": "nominal"}, 
+      {"field": "Per 10,000 population", "type": "quantitative", "format": ".2f"}]
+    
+    
   }
    
 }
