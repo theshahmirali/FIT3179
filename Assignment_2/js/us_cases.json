@@ -19,7 +19,13 @@
       "field": "latitude",
       "type": "quantitative"
     },
-    "size": {"field": "Total Cases", "type": "quantitative", "scale": {"scheme": "blues"} }
+    "size": {
+      "field": "Total Cases", "type": "quantitative", "scale": {"scheme": "blues"} }, 
+
+    "tooltip":[
+      {"field": "County", "type": "nominal"}, 
+      {"field": "Total Cases", "type": "quantitative"}]
+    
   }
    
 }
