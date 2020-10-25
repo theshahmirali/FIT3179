@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Composition of Cases per Country",
+  "width": 500,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_confirmed_cleaned.csv"
   },
@@ -24,7 +26,7 @@
     },
     {"fold": ["Active","Recovered","Deaths"]}
   ],
-  "mark": {"type": "arc", "innerRadius": 70},
+  "mark": {"type": "arc", "innerRadius": 100},
   
   "encoding": {
     "theta": {"field": "value", "type": "quantitative", "stack": true},
