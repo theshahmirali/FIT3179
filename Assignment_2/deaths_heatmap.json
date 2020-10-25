@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+      "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_deaths_wide_cleaned.csv"
+  },
+  "width": 600,
+  "height": 300,
+  "title": "Daily Covid Deaths Wordwide",
+  "config": {
+      "view": {
+          "strokeWidth": 0,
+          "step": 13
+      },
+      "axis": {
+          "domain": false
+      }
+  },
+  "mark": "rect",
+  "encoding": {
+      "x": {
+          "field": "Date",
+          "timeUnit": "date",
+          "type": "ordinal",
+          "title": "Day",
+          "axis": {
+              "labelAngle": 0,
+              "format": "%e"
+          }
+      },
+      "y": {
+          "field": "Date",
+          "timeUnit": "month",
+          "type": "ordinal",
+          "title": "Month"
+      },
+      "color": {
+          "field": "Deaths",
+          "aggregate": "max",
+          "type": "quantitative",
+          "legend": {
+              "title": "Cases"
+          },
+          "scale": {
+        "type": "threshold",
+        "domain": [25000, 100000, 150000],
+        "range": ["#fcbba1", "#fc9272", "#fb6a4a", "#cb181d"]
+      }
+      }
+  }
+}
