@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Recoveries per Continent over Time",
+  "width": 700,
+  "height": 500,
+  "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_recoveries_wide_cleaned.csv"},
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": ["Continent"],
+          "bind": "legend"
+        }
+      },
+  "transform": [ {"filter": "datum.Recovered > 0"}],
+  "encoding": {
+    "x": {"timeUnit": "month", "field": "Date", "title": "Month"},
+    "y": {"aggregate":"mean", "field": "Recovered", "type": "quantitative", "axis": {"tickCount": 6},
+      "scale": {"type": "log", "domain": [1, 1000000]}
+      },
+    "color": {
+          "field": "Continent",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ],
+            "range": [
+              "#e41a1c",
+              "#377eb8",
+              "#4daf4a",
+              "#984ea3",
+              "#ff7f00",
+              "#a65628"
+            ]
+          }
+        },
+    "opacity": {
+          "condition": {"selection": "continent_highlight", "value": 0.8},
+          "value": 0.1
+    },
+    "tooltip":[
+      {"field": "Continent", "type": "nominal"}, 
+      {"field": "Recovered", "type": "quantitative", "format": ",.2f", "aggregate": "mean"}]
+  }
+}
