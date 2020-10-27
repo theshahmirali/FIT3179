@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Cases per Continent over Time",
-  "width": 700,
-  "height": 500,
+  "width": 400,
+  "height": 300,
   "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_wide_cleaned.csv"},
   "mark": {
     "type": "line",
@@ -18,7 +18,7 @@
   "transform": [ {"filter": "datum.Cases > 0"}],
   "encoding": {
     "x": {"timeUnit": "month", "field": "Date", "title": "Month"},
-    "y": {"aggregate":"mean", "field": "Cases", "type": "quantitative", "axis": {"tickCount": 6},
+    "y": {"aggregate":"mean", "field": "Cases", "type": "quantitative", "title": "Cases", "axis": {"tickCount": 6},
       "scale": {"type": "log", "domain": [1, 1000000]}
       },
     "color": {
