@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 200,
+  "title": "Top 10 Active Cases Worldwide",
+  "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_confirmed_cleaned.csv"},
+  "mark": "bar",
+  "transform": [
+    {
+      "aggregate": [{"op": "mean", "field": "Active", "as": "aggregate_active"}],
+      "groupby": ["Country"]
+    },
+    {
+      "window": [{"op": "row_number", "as": "rank"}],
+      "sort": [{ "field": "aggregate_active", "order": "descending" }]
+    },
+    {
+      "calculate": "datum.rank < 10 ? datum.Country : 'All Others'", "as": "ranked_country"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "aggregate": "mean",
+      "field": "aggregate_active",
+      "type": "quantitative",
+      "title": "Active Cases"
+    },
+    "y": {
+      "sort": {"op": "mean", "field": "aggregate_active", "order": "descending"},
+      "field": "ranked_country",
+      "type": "ordinal",
+      "title": null
+    },
+    "tooltip":[
+      {"field": "Country", "type": "nominal"}, 
+      {"field": "aggregate_active", "type": "quantitative", "format": "," , "title": "Active"}]
+  }
+}
