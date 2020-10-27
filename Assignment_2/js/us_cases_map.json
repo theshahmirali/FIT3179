@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "COVID-19 Cases in USA",
-  "width": 500,
-  "height": 300,
+  "width": 700,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_confirmed_US_cleaned.csv"
   },
