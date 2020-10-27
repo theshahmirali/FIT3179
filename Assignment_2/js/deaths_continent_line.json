@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Deaths per Continent over Time",
-  "width": 700,
-  "height": 500,
+  "width": 400,
+  "height": 300,
   "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_deaths_wide_cleaned.csv"},
   "mark": {
     "type": "line",
@@ -18,7 +18,7 @@
   "transform": [ {"filter": "datum.Deaths > 0"}],
   "encoding": {
     "x": {"timeUnit": "month", "field": "Date", "title": "Month"},
-    "y": {"aggregate":"mean", "field": "Deaths", "type": "quantitative", "axis": {"tickCount": 5},
+    "y": {"aggregate":"mean", "field": "Deaths", "title": "Deaths", "type": "quantitative", "axis": {"tickCount": 5},
       "scale": {"type": "log", "domain": [1, 100000]}
       },
     "color": {
