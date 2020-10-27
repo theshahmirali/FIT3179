@@ -153,6 +153,31 @@
     </div>
     <!-- end pure grid group -->
    
+   
+   <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description description-center">
+            <h2>How is USA dealing with Covid?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+          </div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+   
+   <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="vis9"  class="vis-container"></div>
+        </div>
+      
+        <div class="pure-u-1-2">
+          <div id="vis10"  class="vis-container"></div>
+        </div>
+      
+    </div>
+    <!-- end pure grid group -->
+   
 
     <!-- pure grid group -->
     <div class="pure-g">
@@ -193,6 +218,9 @@
           
   var specVis7= "Assignment_2/js/composition_donut.json";
   var specVis8= "Assignment_2/js/deaths_heatmap.json";
+          
+  var specVis9= "Assignment_2/js/us_cases_map.json";        
+  var specVis10= "Assignment_2/js/us_deaths_map.json";        
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -226,6 +254,15 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
+   vegaEmbed('#vis9', specVis9, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+          
+   vegaEmbed('#vis10', specVis10, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);       
+          
+          
 </script>
 </body>
 </html>
