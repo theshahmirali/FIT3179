@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "COVID-19 Cases World Wide as of 24th September 2020",
-  "width": 800,
-  "height": 600,
+  "width": 1200,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/js/ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
