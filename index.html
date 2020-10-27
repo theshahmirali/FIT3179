@@ -192,7 +192,7 @@
    <!-- pure grid group -->
     <div class="pure-g">
         <div class="pure-u-1-3">
-          <div id="vis12"  class="vis-container"></div>
+          <div id="vis11"  class="vis-container"></div>
         </div>
       
         <div class="pure-u-1-3">
@@ -230,8 +230,8 @@
           
   var specVis9= "Assignment_2/js/us_cases_map.json";        
   var specVis10= "Assignment_2/js/us_deaths_map.json";
-  
-  var specVis11= "Assignment_2/js/total_cases_continent_line.json";
+          
+  var specVis11= "Assignment_2/js/cases_continent_line.json";
   var specVis12= "Assignment_2/js/recoveries_continent_line.json";
   var specVis13= "Assignment_2/js/deaths_continent_line.json";        
 
@@ -277,7 +277,7 @@
           
    vegaEmbed('#vis11', specVis11, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);       
+  }).catch(console.error);  
           
    vegaEmbed('#vis12', specVis12, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -286,7 +286,7 @@
    vegaEmbed('#vis13', specVis13, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);        
-          
+         
 
 </script>
 </body>
