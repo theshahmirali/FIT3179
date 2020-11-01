@@ -3,12 +3,12 @@
   "data": {
       "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_deaths_wide_cleaned.csv"
   },
+   "background":"Honeydew",
   "title": {
     "text": "Daily Covid-19 Deaths Wordwide",
     "fontSize": 16,
     "dy": -70
   },
-  "background":"Honeydew",
   "width": 500,
   "height": 200,
   "config": {
@@ -50,6 +50,8 @@
         "domain": [25000, 100000, 150000],
         "range": ["#fcbba1", "#fc9272", "#fb6a4a", "#cb181d"]
       }
-      }
+      },
+      "tooltip":[
+      {"field": "Deaths", "type": "quantitative", "format": ",.2f", "aggregate": "max", "title":"Mean Deaths:"}]
   }
 }
