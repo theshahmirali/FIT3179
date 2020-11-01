@@ -5,8 +5,8 @@
     "fontSize": 16,
     "dy": -15
   }, 
-  "width": 400,
-  "height": 300,
+  "width": 350,
+  "height": 200,
   "padding": 5,
 
 "signals": [
