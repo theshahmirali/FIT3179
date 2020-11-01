@@ -5,7 +5,7 @@
     "fontSize": 16,
     "dy": -15
   },
-  "width": 400,
+  "width": 375,
   "height": 300,
   "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_deaths_wide_cleaned.csv"},
   "mark": {
