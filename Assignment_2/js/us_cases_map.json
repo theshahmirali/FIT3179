@@ -1,16 +1,39 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "COVID-19 Cases in USA",
+   "title": {
+    "text": "COVID-19 Cases in USA",
+    "fontSize": 16,
+    "dy": -15
+  },
   "width": 700,
   "height": 500,
-  "data": {
-    "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_confirmed_US_cleaned.csv"
-  },
-  "transform": [{"calculate": "datum.Total", "as": "Total Cases"}],
-  "projection": {
-    "type": "albersUsa"
-  },
-  "mark": "circle", 
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/js/us-10m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "projection": {
+        "type": "albersUsa"
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "whitesmoke",
+        "stroke": "white"
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_confirmed_US_cleaned.csv"
+      },
+      "transform": [{"calculate": "datum.Total", "as": "Total Cases"}],
+      "projection": {
+        "type": "albersUsa"
+      },
+      "mark": "circle", 
   "encoding": {
     "longitude": {
       "field": "longitude",
@@ -21,12 +44,18 @@
       "type": "quantitative"
     },
     "size": {
-      "field": "Total Cases", "type": "quantitative", "scale": {"scheme": "blues"} }, 
-
+      "field": "Total Cases", "type": "quantitative",  
+      "scale": {
+            "type": "threshold",
+            "domain": [25000, 50000, 100000, 200000, 250000],
+            "range": [10, 80, 150, 200, 300, 400]
+          } 
+        }, 
     "tooltip":[
       {"field": "County", "type": "nominal"}, 
       {"field": "Total Cases", "type": "quantitative", "format": ","}], 
-      "opacity": {"value": 0.8}
+      "opacity": {"value": 0.7}
   }
-   
+    }
+  ]
 }
