@@ -1,0 +1,123 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+   "title": {
+    "text": "Composition of Cases per Continent",
+    "fontSize": 16,
+    "dy": -15
+  }, 
+  "width": 400,
+  "height": 300,
+  "padding": 5,
+
+"signals": [
+    {
+      "name": "startAngle", "value": -2.5
+    },
+    {
+      "name": "endAngle", "value": 2.5
+    },
+    {
+      "name": "padAngle", "value": 0
+    },
+    {
+      "name": "bandPadding", "value": 0.53
+    },
+    {
+      "name": "innerRadius", "value": 60
+    },
+    {
+      "name": "cornerRadius", "value": 0
+    }
+  ],
+
+  "data": [{
+    "name": "table",
+    "values": [{
+			"Active": 13.52,
+			"Recoveries": 83.42,
+			"Deaths": 3.06,
+			"ch": "South America"
+		}, {
+			"Active": 53.05,
+			"Recoveries": 43.48,
+			"Deaths": 3.47,
+			"ch": "North America"
+		}, {
+			"Active": 46.83,
+			"Recoveries": 48.73,
+			"Deaths": 4.44,
+			"ch": "Europe"
+		}, {
+			"Active": 17.34,
+			"Recoveries": 80.3,
+			"Deaths": 2.36,
+			"ch": "Africa"
+		},{
+			"Active": 17.13,
+			"Recoveries": 81.04,
+			"Deaths": 1.83,
+			"ch": "Asia"
+		},{
+			"Active": 9.66,
+			"Recoveries": 87.38,
+			"Deaths": 2.96,
+			"ch": "Oceania"
+		}],
+    "transform": [{
+		"type": "fold",
+		"fields": ["Active","Recoveries","Deaths"]
+	}, {
+		"type": "formula",
+		"as": "c",
+		"initonly": true,
+		"expr": "if(datum.key==='Recoveries','#238b45',if(datum.key==='Active','orange','red'))"
+	}, {
+          "type": "stack",
+          "groupby": ["ch"],
+          "field": "value",
+		  "as": ["r0","r1"]
+        }
+      ]
+  }],
+
+   "scales": [
+    {
+      "name": "chbands",
+      "type": "band",
+	  "paddingInner": { "signal": "bandPadding" },
+      "range": [{ "signal": "innerRadius" }, { "signal": "width / 2 - 10" }],
+      "domain": {"data": "table", "field": "ch"}
+    },
+    {
+      "name": "angle",
+      "type": "linear",
+      "range": [{ "signal": "startAngle"}, { "signal": "endAngle"}],
+      "nice": true, "zero": true,
+      "domain": {"data": "table", "field": "r1"}
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "encode": {
+		"enter": {
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"}
+        },
+        "update": {
+          "fill": {"field": "c"},
+          "startAngle": { "scale": "angle", "field": "r0"},
+          "endAngle": { "scale": "angle", "field": "r1"},
+          "padAngle": {"signal": "padAngle"},
+          "innerRadius": { "scale": "chbands", "field": "ch" },
+          "outerRadius": { "scale": "chbands", "field": "ch", "offset": { "scale": "chbands", "band": 1 } },
+          "cornerRadius": {"signal": "cornerRadius"},
+		  "tooltip": { "signal": "datum.ch+ ':'+'  '+datum.key+'  '+datum.value+'%'" }
+        }
+      }
+    }
+  ]
+}
+
