@@ -5,6 +5,7 @@
     "fontSize": 16,
     "dy": -15
   },
+  "background":"Ivory",
   "width": 1600,
   "height": 700,
   "data": {
