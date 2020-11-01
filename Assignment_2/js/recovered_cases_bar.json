@@ -2,7 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 400,
   "height": 200,
-  "title": "Top Recovered Cases Worldwide",
+   "title": {
+    "text": "Top Recovered Cases Worldwide",
+    "fontSize": 16,
+    "dy": -15
+  },
   "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_confirmed_cleaned.csv"},
   "mark": "bar",
   "transform": [
