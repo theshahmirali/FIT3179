@@ -3,9 +3,13 @@
   "data": {
       "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_deaths_wide_cleaned.csv"
   },
+  "title": {
+    "text": "Daily Covid-19 Deaths Wordwide",
+    "fontSize": 16,
+    "dy": -15
+  },
   "width": 600,
   "height": 300,
-  "title": "Daily Covid Deaths Wordwide",
   "config": {
       "view": {
           "strokeWidth": 0,
