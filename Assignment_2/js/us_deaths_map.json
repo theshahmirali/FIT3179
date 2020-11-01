@@ -1,6 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "COVID-19 Deaths in USA",
+  "title": {
+    "text": "COVID-19 Deaths in USA",
+    "fontSize": 16,
+    "dy": -15
+  },
   "width": 700,
   "height": 500,
   "data": {
@@ -31,7 +35,7 @@
 
     "tooltip":[
       {"field": "County", "type": "nominal"}, 
-      {"field": "Per 10,000 population", "type": "quantitative", "format": ".2f"}]
+      {"field": "Per 10,000 population", "type": "quantitative", "format": ".2f", "formatType": ""}]
     
     
   }
