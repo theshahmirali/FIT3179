@@ -1,6 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Deaths per Continent over Time",
+  "title": {
+    "text": "Deaths per Continent over Time",
+    "fontSize": 16,
+    "dy": -15
+  },
   "width": 400,
   "height": 300,
   "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_deaths_wide_cleaned.csv"},
