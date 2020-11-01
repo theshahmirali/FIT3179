@@ -1,6 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Composition of Cases per Country",
+  "title": {
+    "text": "Composition of Cases per Country",
+    "fontSize": 16,
+    "dy": -15
+  },
   "width": 500,
   "height": 300,
   "data": {
@@ -26,11 +30,11 @@
     },
     {"fold": ["Active","Recovered","Deaths"]}
   ],
-  "mark": {"type": "arc", "innerRadius": 100},
+  "mark": {"type": "arc", "innerRadius": 120},
   
   "encoding": {
     "theta": {"field": "value", "type": "quantitative", "stack": true},
-    "color": {"field": "key", "type": "nominal"},
+    "color": {"field": "key", "type": "nominal","title": "Type"},
     "tooltip" : [
       {"field": "Country", "type": "nominal"},
       {"field": "Continent", "type": "nominal"},
