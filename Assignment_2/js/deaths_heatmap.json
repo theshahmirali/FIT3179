@@ -6,7 +6,7 @@
   "title": {
     "text": "Daily Covid-19 Deaths Wordwide",
     "fontSize": 16,
-    "dy": -15
+    "dy": -40
   },
   "width": 500,
   "height": 200,
