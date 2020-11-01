@@ -5,6 +5,7 @@
     "fontSize": 16,
     "dy": -15
   },
+  "background":"Honeydew",
   "width": 700,
   "height": 500,
   "data": {
