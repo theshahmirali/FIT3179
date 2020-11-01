@@ -8,8 +8,8 @@
     "fontSize": 16,
     "dy": -15
   },
-  "width": 600,
-  "height": 300,
+  "width": 500,
+  "height": 200,
   "config": {
       "view": {
           "strokeWidth": 0,
