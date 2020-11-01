@@ -38,7 +38,7 @@
         "domain": [1, 50, 150],
         "range": ["#c6dbef", "#6baed6", "#3182bd", "#08519c"]
       },
-      "legend":{"offset":-130, "orient":"none", "legendY":260, "legendX":30}
+      "legend":{"offset":-130, "orient":"none", "legendY":470, "legendX":30}
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
