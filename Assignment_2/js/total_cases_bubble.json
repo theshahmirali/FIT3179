@@ -2,7 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 600,
   "height": 400,
-  "title": "Do more Cases mean more Death?",
+  "title": {
+    "text": "Do more Cases mean more Death?",
+    "fontSize": 16,
+    "dy": -15
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_confirmed_cleaned.csv"
   },
