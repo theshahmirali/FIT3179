@@ -5,10 +5,12 @@
     "fontSize": 16,
     "dy": -15
   },
-  "background":"Honeydew",
-  "width": 360,
+   "background":"Honeydew",
+  "width": 375,
   "height": 300,
   "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_deaths_wide_cleaned.csv"},
+  "transform": [ {"filter": "datum.Deaths > 0"}],
+  "layer": [ {
   "mark": {
     "type": "line",
     "point": true
@@ -20,7 +22,7 @@
           "bind": "legend"
         }
       },
-  "transform": [ {"filter": "datum.Deaths > 0"}],
+  
   "encoding": {
     "x": {"timeUnit": "month", "field": "Date", "title": "Month"},
     "y": {"aggregate":"mean", "field": "Deaths", "title": "Deaths", "type": "quantitative", "axis": {"tickCount": 5},
@@ -55,5 +57,41 @@
     "tooltip":[
       {"field": "Continent", "type": "nominal"}, 
       {"field": "Deaths", "type": "quantitative", "format": ",.2f", "aggregate": "mean"}]
-  }
+    } 
+  },
+  {
+          "mark": {
+            "type": "text",
+            "text": ["Most Deaths in ", " South America"],
+            "size": 12,
+            "width": 50,
+            "fontWeight": "normal",
+            "font": "arial"
+          },
+          "encoding": {
+            "color": {"value": "black"},
+            "x": {"value":200},
+            "y": {"value": 30}
+          }
+        }, 
+        {
+          "data": {"values": [{}]},
+          "mark": {"type": "rule", "color": "black", "size": 1},
+          "encoding": {
+            "x": {
+              "value": 375,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "y": {
+              "value": 40,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "x2": {"value": 250},
+            "y2": {"value": 40}
+          }
+        }
+
+  ]
 }
