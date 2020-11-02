@@ -5,10 +5,12 @@
     "fontSize": 16,
     "dy": -15
   },
-  "background":"Honeydew",
-  "width": 360,
+   "background":"Honeydew",
+  "width": 375,
   "height": 300,
   "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_recoveries_wide_cleaned.csv"},
+  "transform": [ {"filter": "datum.Recovered > 0"}],
+  "layer":[ {
   "mark": {
     "type": "line",
     "point": true
@@ -20,7 +22,7 @@
           "bind": "legend"
         }
       },
-  "transform": [ {"filter": "datum.Recovered > 0"}],
+  
   "encoding": {
     "x": {"timeUnit": "month", "field": "Date", "title": "Month"},
     "y": {"aggregate":"mean", "field": "Recovered", "title": "Recoveries" , "type": "quantitative", "axis": {"tickCount": 6},
@@ -55,5 +57,43 @@
     "tooltip":[
       {"field": "Continent", "type": "nominal"}, 
       {"field": "Recovered", "type": "quantitative", "format": ",.2f", "aggregate": "mean"}]
-  }
+  } 
+  },
+
+  {
+          "mark": {
+            "type": "text",
+            "text": ["North America and Africa ", " had equal recoveries"],
+            "size": 12,
+            "width": 50,
+            "fontWeight": "normal",
+            "font": "arial"
+          },
+          "encoding": {
+            "color": {"value": "black"},
+            "x": {"value":250},
+            "y": {"value": 190}
+          }
+        }, 
+        {
+          "data": {"values": [{}]},
+          "mark": {"type": "rule", "color": "black", "size": 1},
+          "encoding": {
+            "x": {
+              "value": 210,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "y": {
+              "value": 180,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "x2": {"value": 180},
+            "y2": {"value": 160}
+          }
+        }
+  
+  
+  ]
 }
