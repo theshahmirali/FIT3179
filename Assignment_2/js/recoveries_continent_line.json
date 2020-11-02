@@ -63,7 +63,7 @@
   {
           "mark": {
             "type": "text",
-            "text": ["North America and Africa ", " had equal recoveries"],
+            "text": ["Africa and Oceania ", " had equal recoveries"],
             "size": 12,
             "width": 50,
             "fontWeight": "normal",
