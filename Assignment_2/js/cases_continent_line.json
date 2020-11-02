@@ -5,14 +5,12 @@
     "fontSize": 16,
     "dy": -15
   },
-  "background":"Honeydew",
-  "width": 360,
+   "background":"Honeydew",
+  "width": 375,
   "height": 300,
   "data": {"url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/time_series_wide_cleaned.csv"},
-  "mark": {
-    "type": "line",
-    "point": true
-  },
+  "transform": [ {"filter": "datum.Cases > 0"}],
+  "layer":[ {
   "selection": {
         "continent_highlight": {
           "type": "multi",
@@ -20,7 +18,10 @@
           "bind": "legend"
         }
       },
-  "transform": [ {"filter": "datum.Cases > 0"}],
+  "mark": {
+    "type": "line",
+    "point": true
+  },
   "encoding": {
     "x": {"timeUnit": "month", "field": "Date", "title": "Month"},
     "y": {"aggregate":"mean", "field": "Cases", "type": "quantitative", "title": "Cases", "axis": {"tickCount": 6},
@@ -56,4 +57,41 @@
       {"field": "Continent", "type": "nominal"}, 
       {"field": "Cases", "type": "quantitative", "format": ",.2f", "aggregate": "mean"}]
   }
+   },
+   {
+          "mark": {
+            "type": "text",
+            "text": ["North America and Africa ", " had equal cases"],
+            "size": 12,
+            "width": 50,
+            "fontWeight": "normal",
+            "font": "arial"
+          },
+          "encoding": {
+            "color": {"value": "black"},
+            "x": {"value":90},
+            "y": {"value": 14}
+          }
+        }, 
+        {
+          "data": {"values": [{}]},
+          "mark": {"type": "rule", "color": "black", "size": 1},
+          "encoding": {
+            "x": {
+              "value": 238,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "y": {
+              "value": 115,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "x2": {"value": 150},
+            "y2": {"value": 40}
+          }
+        }
+   
+    
+    ]
 }
