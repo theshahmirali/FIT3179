@@ -7,7 +7,7 @@
     "fontSize": 16,
     "dy": -15
   },
-  "background":"Honeydew",
+   "background":"Honeydew",
   "data": {
     "url": "https://raw.githubusercontent.com/theshahmirali/FIT3179/main/Assignment_2/data/covid_19_confirmed_cleaned.csv"
   },
@@ -156,6 +156,57 @@
           {"field": "Recovered", "type": "quantitative", "format": ","}
         ]
       }
-    }
+    },
+    {
+          "mark": {
+            "type": "text",
+            "text": ["Chile has lower population than ", " Pakistan but more cases"],
+            "size": 12,
+            "width": 50,
+            "fontWeight": "normal",
+            "font": "arial"
+          },
+          "encoding": {
+            "color": {"value": "black"},
+            "x": {"value":90},
+            "y": {"value": 14}
+          }
+        }, 
+        {
+          "data": {"values": [{}]},
+          "mark": {"type": "rule", "color": "black", "size": 1},
+          "encoding": {
+            "x": {
+              "value": 280,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "y": {
+              "value": 150,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "x2": {"value": 150},
+            "y2": {"value": 40}
+          }
+        },
+        {
+          "data": {"values": [{}]},
+          "mark": {"type": "rule", "color": "black", "size": 1},
+          "encoding": {
+            "x": {
+              "value": 330,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "y": {
+              "value": 270,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "x2": {"value": 150},
+            "y2": {"value": 40}
+          }
+        }
   ]
 }
