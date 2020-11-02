@@ -169,6 +169,56 @@
           }
         ]
       }
-    }
+    },
+    {"mark": {
+            "type": "text",
+            "text": ["Yemen has more deaths than ", "Singapore even with", "fewer cases"],
+            "size": 12,
+            "width": 50,
+            "fontWeight": "normal",
+            "font": "arial"
+          },
+          "encoding": {
+            "color": {"value": "black"},
+            "x": {"value":90},
+            "y": {"value": 14}
+          }
+        }, 
+        {
+          "data": {"values": [{}]},
+          "mark": {"type": "rule", "color": "black", "size": 1},
+          "encoding": {
+            "x": {
+              "value": 405,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "y": {
+              "value": 305,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "x2": {"value": 150},
+            "y2": {"value": 40}
+          }
+        },
+        {
+          "data": {"values": [{}]},
+          "mark": {"type": "rule", "color": "black", "size": 1},
+          "encoding": {
+            "x": {
+              "value": 280,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "y": {
+              "value": 210,
+              "type": "quantitative",
+              "scale": {"domain": [0, 100]}
+            },
+            "x2": {"value": 150},
+            "y2": {"value": 40}
+          }
+        }
   ]
 }
